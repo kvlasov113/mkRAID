@@ -13,13 +13,12 @@ sudo mdadm --create --verbose /dev/md0 -l 10 -n 4 /dev/sd{b,c,d,e}
 sudo su
 
 sudo touch /etc/mdadm.conf
-echo "DEVICE partitions" > /etc/mdadm/mdadm.conf
+echo "DEVICE partitions" > /etc/mdadm.conf
 mdadm --detail --scan --verbose | awk '/ARRAY/ {print}' >> /etc/mdadm.conf
 
 #Создаём партиции
 parted -s /dev/md0 mklabel gpt
 
-parted -s /dev/md0 mklabel gpt
 parted /dev/md0 mkpart primary ext4 0% 20%
 parted /dev/md0 mkpart primary ext4 20% 40%
 parted /dev/md0 mkpart primary ext4 40% 60%
