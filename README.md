@@ -1,8 +1,7 @@
 # Инструкции
 
-* [Как начать Git](git_quick_start.md)
-* [Как начать Vagrant](vagrant_quick_start.md)
+Используйте mkRAID.sh для создания RAID, разметки партиций, создания директорий.
 
 ## otus-linux
 
-Используйте этот [Vagrantfile](Vagrantfile) - для тестового стенда.
+
